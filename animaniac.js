@@ -61,7 +61,7 @@ var stopCallBack = function(e){
 var l = document.getElementById("clear");
 var clearCallBack = function(e){
     ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0,0,600,800);
+    ctx.fillRect(0,0,850,600);
     inc = true;
     started = false;
     r=60;
