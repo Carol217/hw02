@@ -26,6 +26,7 @@ var drawCircle1 = function(){
 }
 
 var growingCallBack = function(e){
+    window.cancelAnimationFrame(frame);
     console.log(frame)
     if (!started){
 	
@@ -69,6 +70,9 @@ var clearCallBack = function(e){
     y=300;
 };
 
+var logo = new Image();
+logo.src = "Small_Logo.png";
+
 var x = 300;
 var y = 300;
 var add_x = 2;
@@ -87,14 +91,21 @@ var drawCircle2 = function(){
     ctx.fill();
 }
 
+var drawLogo = function(){
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0,0,850,600);
+    ctx.drawImage(logo, x, y);
+}
+
 var screenSaverCallBack = function(e){
+    window.cancelAnimationFrame(frame);
     console.log(frame);
-    drawCircle2();
-    if (x>=850 || x<=0 ){
+    drawLogo();
+    if (x>=(850-90) || x<-10 ){
 	add_x *= -1;
 	color *= -1;
     }
-    if (y>=600 || y<=0){
+    if (y>=(600-57) || y<-10){
 	add_y *= -1;
 	color *= -1;
     }
